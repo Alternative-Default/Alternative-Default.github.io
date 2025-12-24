@@ -6,11 +6,7 @@
 </head>
 <body>
 
-<side>
-<h1>Navigation</h1>
-<a href="/home">Home - You are here!</a><br><br>
-<a href="/nextvideo">Video Progress</a>
-</side>
+<div id="navbar"></div>
 
 <main>
 <h1>Welcome to my website!</h1>
@@ -32,6 +28,15 @@
 <h2>Cheers,<br>Alternative Default</h2>
 </main>
 
+<script>
+fetch("/navbar.html")
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById("navbar").innerHTML = data;
+    });
+</script>
+
 </body>
 </html>
+
 
